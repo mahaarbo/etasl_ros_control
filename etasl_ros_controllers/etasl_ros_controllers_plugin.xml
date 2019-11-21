@@ -2,4 +2,7 @@
     <class name="etasl_ros_controllers/EtaslController" type="etasl_ros_controllers::EtaslController" base_class_type="controller_interface::ControllerBase">
         <description>A controller that executes an eTaSL task specification.</description>
     </class>
+    <class name="etasl_ros_controllers/EtaslMultitaskspecController" type="etasl_ros_controllers::EtaslMultitaskspecController" base_class_type="controller_interface::ControllerBase">
+      <description>A controller that loads a list of eTaSL task specifications into one and executes them.</description>
+    </class>
 </library>
