@@ -135,6 +135,7 @@ private:
   std::vector<boost::shared_ptr<realtime_tools::RealtimePublisher<geometry_msgs::Twist>>> twist_realtime_pubs_;
 
   std::vector<std::string> task_specification_;
+  std::vector<std::string> task_strings_;
   boost::shared_ptr<EtaslDriver> etasl_;
 };
 }  // namespace etasl_ros_controllers

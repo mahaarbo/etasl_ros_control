@@ -33,6 +33,8 @@ etasl_controller:
       - "Scalar"
       - "Scalar"
       - "Vector"
+  task_strings:
+    - "tgt_x = ctx:createInputChannelScalar(\"tgt_x\")"
   task_specification:
     - "$(find etasl_ros_control_examples)/scripts/split_example_robot.lua"
     - "$(find etasl_ros_control_examples)/scripts/split_example_task.lua"

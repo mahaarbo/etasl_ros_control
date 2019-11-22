@@ -1,10 +1,8 @@
 -- Copyright (c) 2019 Norwegian University of Science and Technology
 -- Use of this source code is governed by the LGPL-3.0 license, see LICENSE
 
-require("context")
 require("geometric")
 
-tgt_x = ctx:createInputChannelScalar("tgt_x")
 tgt_y = ctx:createInputChannelScalar("tgt_y")
 tgt_z = ctx:createInputChannelScalar("tgt_z")
 

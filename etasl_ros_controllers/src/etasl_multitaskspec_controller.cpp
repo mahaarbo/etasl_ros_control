@@ -57,13 +57,19 @@ bool EtaslMultitaskspecController::init(hardware_interface::RobotHW* robot_hardw
   {
     return false;
   }
-
   if (!node_handle.getParam("task_specification", task_specification_))
   {
     ROS_ERROR("EtaslMultitaskspecController: Could not find task specification on parameter server");
     return false;
   }
+  if (!node_handle.getParam("task_strings", task_strings_))
+  {
+    ROS_INFO_STREAM("EtaslMultitaskspecController: No optional task strings found.");
+  }
   etasl_ = boost::make_shared<EtaslDriver>(300, 0.0, 0.0001);
+  for (unsigned int i=0; i < task_strings_.size(); i++) {
+    etasl_->readTaskSpecificationString(task_strings_[i]);
+  }
   for (unsigned int i=0; i < task_specification_.size(); i++){
     etasl_->readTaskSpecificationFile(task_specification_[i]);
     ROS_INFO_STREAM("EtaslMultitaskspecController: Loaded task specification from \"" << task_specification_[i] << "\"");
